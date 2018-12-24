@@ -66,6 +66,9 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function() {
-
+    return {
+      title:"我爱你，亲爱的大邱",
+      path:"/pages/test/test"
+    }
   }
 })
