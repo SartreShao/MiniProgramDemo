@@ -9,7 +9,8 @@
     "navigationBarTitleText": "约拍季",
     "navigationBarTextStyle": "white",
     "navigationStyle": "custom",
-    "backgroundColor": "#000000",
+    "backgroundColor": "#ffffff",
+    "enablePullDownRefresh": true
   },
   "tabBar": {
     "list": [
