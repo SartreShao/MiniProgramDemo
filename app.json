@@ -6,8 +6,9 @@
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#000",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"white"
+    "navigationBarTitleText": "约拍季",
+    "navigationBarTextStyle":"white",
+    "navigationStyle":"custom"
   },
   "tabBar": {
     "list": [{
