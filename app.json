@@ -10,7 +10,8 @@
     "navigationBarTextStyle": "white",
     "navigationStyle": "custom",
     "backgroundColor": "#ffffff",
-    "enablePullDownRefresh": true
+    "enablePullDownRefresh": true,
+    "pageOrientation": "auto"
   },
   "tabBar": {
     "list": [
