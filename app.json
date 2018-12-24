@@ -14,6 +14,8 @@
     "pageOrientation": "auto"
   },
   "tabBar": {
+    "color": "#123456",
+    "selectedColor": "#654321",
     "list": [
       {
         "pagePath": "pages/index/index",
