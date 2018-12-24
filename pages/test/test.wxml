@@ -1,2 +1,4 @@
 <!--pages/test.wxml-->
-<view>{{fuck_array[0].name}}喜欢{{fuck_array[1].name}}</view>
+<!-- <view>{{fuck_array[0].name}}喜欢{{fuck_array[1].name}}</view> -->
+<view>{{text}}</view>
+<button bindtap='like'>超喜欢！</button> 

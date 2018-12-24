@@ -12,6 +12,12 @@ Page({
       name: "陈邱爽"
     }]
   },
+  like: function() {
+    this.setData({
+      text: "Yeah!!!"
+    })
+    console.log("yeah!!!")
+  },
 
   /**
    * 生命周期函数--监听页面加载
@@ -67,8 +73,8 @@ Page({
    */
   onShareAppMessage: function() {
     return {
-      title:"我爱你，亲爱的大邱",
-      path:"/pages/test/test"
+      title: "我爱你，亲爱的大邱",
+      path: "/pages/test/test"
     }
   }
 })
