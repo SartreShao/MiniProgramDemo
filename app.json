@@ -1,14 +1,15 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/test/test"
   ],
   "window": {
     "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#000",
     "navigationBarTitleText": "约拍季",
     "navigationBarTextStyle": "white",
-    "navigationStyle": "custom",
+    "navigationStyle": "default",
     "backgroundColor": "#ffffff",
     "enablePullDownRefresh": true,
     "pageOrientation": "auto"
@@ -31,6 +32,10 @@
         "text": "日志",
         "iconPath": "res/log.png",
         "selectedIconPath": "res/log_selected.png"
+      },
+      {
+        "pagePath": "pages/test/test",
+        "text": "测试"
       }
     ]
   }
