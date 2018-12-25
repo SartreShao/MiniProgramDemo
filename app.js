@@ -1,5 +1,18 @@
 //app.js
 const AV = require('/libs/av-weapp-min.js');
+var APP_ID = 'Cl6VHv0UNhQORin9N54p0bzn-gzGzoHsz';
+var APP_KEY = 'e7XSPD0xM9BrE0Q5hngytKJg';
+AV.init({
+  appId: APP_ID,
+  appKey: APP_KEY
+});
+var TestObject = AV.Object.extend('TestObject');
+var testObject = new TestObject();
+testObject.save({
+  words: 'Hello World!'
+}).then(function (object) {
+  alert('LeanCloud Rocks!');
+})
 App({
   onLaunch: function() {
     console.log("App onLaunch")
