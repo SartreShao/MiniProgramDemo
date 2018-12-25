@@ -1,4 +1,5 @@
 //app.js
+const AV = require('/libs/av-weapp-min.js');
 App({
   onLaunch: function() {
     console.log("App onLaunch")
@@ -10,6 +11,7 @@ App({
     // 登录
     wx.login({
       success: res => {
+        console.log(res.code)
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
       }
     })
