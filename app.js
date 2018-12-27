@@ -1,45 +1,32 @@
-//app.js
-const AV = require('/libs/av-weapp-min.js');
-var APP_ID = 'Cl6VHv0UNhQORin9N54p0bzn-gzGzoHsz';
-var APP_KEY = 'e7XSPD0xM9BrE0Q5hngytKJg';
-AV.init({
-  appId: APP_ID,
-  appKey: APP_KEY
-});
-var TestObject = AV.Object.extend('TestObject');
-var testObject = new TestObject();
-testObject.save({
-  words: 'Hello World!'
-}).then(function (object) {
-  alert('LeanCloud Rocks!');
-})
 App({
   onLaunch: function() {
     console.log("App onLaunch")
-    // 展示本地存储能力
-    var logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs)
-
-    // 登录
-    wx.login({
-      success: res => {
-        console.log(res.code)
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
-      }
-    })
-    // 获取用户信息
+    //引入 LeanCloud SDK
+    const AV = require('/libs/av-weapp-min.js');
+    //设置LeanCloud 的 APP_ID 与 APP_KEY
+    const APP_ID = 'Cl6VHv0UNhQORin9N54p0bzn-gzGzoHsz';
+    const APP_KEY = 'e7XSPD0xM9BrE0Q5hngytKJg';
+    //初始化 LeanCloud
+    AV.init({
+      appId: APP_ID,
+      appKey: APP_KEY
+    });
+    //登录 LeanCloud
+    AV.User.loginWithWeapp().then(user => {
+      this.globalData.leanCloudUser = user.toJSON();
+      console.log("leanCloudUser:")
+      console.log(this.globalData.leanCloudUser)
+    }).catch(console.error)
+    //获取用户信息
     wx.getSetting({
       success: res => {
         if (res.authSetting['scope.userInfo']) {
-          // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
+          //已授权
           wx.getUserInfo({
             success: res => {
-              // 可以将 res 发送给后台解码出 unionId
               this.globalData.userInfo = res.userInfo
-
-              // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-              // 所以此处加入 callback 以防止这种情况
+              console.log("userInfo:")
+              console.log(this.globalData.userInfo)
               if (this.userInfoReadyCallback) {
                 this.userInfoReadyCallback(res)
               }
@@ -59,6 +46,7 @@ App({
     console.log("App onError")
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    leanCloudUser: null
   }
 })
