@@ -1,7 +1,11 @@
-<view class="vertical_view_container">
+<view wx:if="{{!hasUserInfo && canIUse}}" class="vertical_view_container">
   <image class='logo_image_item' src='../../res/icon.png' mode='aspectFit' />
   <text class="appname_text_item">YUEPAI</text>
-  <button class="login_button_item">
+  <button class="login_button_item" open-type='getUserInfo' bindgetuserinfo='getUserInfoSuccessCallback'>
     <text>立即登录</text>
   </button>
+</view>
+<view wx:else>
+  <image src='{{userInfo.avatarUrl}}' mode='cover'/>
+  <text>{{userInfo.nickName}}</text>
 </view>
