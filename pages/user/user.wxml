@@ -1,2 +1,7 @@
-<!--pages/user/user.wxml-->
-<text>pages/user/user.wxml</text>
+<view class="vertical_view_container">
+  <image class='logo_image_item' src='../../res/icon.png' mode='aspectFit' />
+  <text class="appname_text_item">YUEPAI</text>
+  <button class="login_button_item">
+    <text>立即登录</text>
+  </button>
+</view>

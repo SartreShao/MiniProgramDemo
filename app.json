@@ -25,13 +25,13 @@
         "pagePath": "pages/index/index",
         "iconPath": "res/index.png",
         "selectedIconPath": "res/index_selected.png"
-      },{
-        "text":"发布",
-        "pagePath":"pages/pre-publish/pre-publish",
-        "iconPath":"res/publish.png",
-        "selectedIconPath":"res/publish.png"
-      }
-      ,
+      },
+      {
+        "text": "发布",
+        "pagePath": "pages/pre-publish/pre-publish",
+        "iconPath": "res/publish.png",
+        "selectedIconPath": "res/publish.png"
+      },
       {
         "text": "我的",
         "pagePath": "pages/user/user",

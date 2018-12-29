@@ -1,5 +1,42 @@
 /* pages/user/user.wxss */
 
 page {
-  background-color: #F3F3F3;
+  background-color: #f3f3f3;
+}
+
+.vertical_view_container {
+  margin-top: 152px;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo_image_item {
+  width: 204.8rpx;
+  height: 204.8rpx;
+}
+
+.appname_text_item {
+  margin-top: 38.19rpx;
+  font-size: 34.7rpx;
+  font-weight: bold;
+}
+
+.login_button_item {
+  display: flex;
+  width: 446.67rpx;
+  height: 87.43rpx;
+  margin-top: 111.81rpx;
+  color: #fff;
+  background-color: #000;
+  border-radius: 49.31rpx;
+  align-items: center;
+  justify-content: center;
+}
+
+.login_button_item text {
+  font-size: 31.25rpx;
+  font-weight: lighter;
 }
