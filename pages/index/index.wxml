@@ -1,2 +1,12 @@
-<!--pages/index/index.wxml-->
-<text>pages/index/index.wxml</text>
+<view id='container' class='vertical_linearlayout'>
+  <view id='tablayout' class='horizontal_linearlayout'>
+    <view class='{{currentTab === "photographer" ? "tab_selected" : "tab_unselected" }}' bindtap='clickTabPhotographer'>摄影师</view>
+    <view class='tab-model {{currentTab === "model" ? "tab_selected" : "tab_unselected" }}' bindtap='clickTabModel'>模特儿</view>
+  </view>
+  <view class='photographer_content_container' wx:if='{{currentTab==="photographer"}}'>
+    <photographer/>
+  </view>
+  <view class='model_content_container' wx:if='{{currentTab==="model"}}'>
+    <model/>
+  </view>
+</view>
