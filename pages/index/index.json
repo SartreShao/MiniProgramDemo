@@ -1,4 +1,5 @@
 {
+  "enablePullDownRefresh": true,
   "usingComponents": {
     "model": "model/model",
     "photographer": "photographer/photographer"
