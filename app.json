@@ -2,7 +2,8 @@
   "pages": [
     "pages/index/index",
     "pages/user/user",
-    "pages/pre-publish/pre-publish"
+    "pages/pre-publish/pre-publish",
+    "pages/setting/setting"
   ],
   "window": {
     "backgroundTextStyle": "dark",

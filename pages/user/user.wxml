@@ -5,7 +5,7 @@
     <text>立即登录</text>
   </button>
 </view>
-<view wx:else>
-  <image src='{{userInfo.avatarUrl}}' mode='cover'/>
+<view wx:else bindtap='clickEvent'>
+  <image src='{{userInfo.avatarUrl}}' mode='cover' />
   <text>{{userInfo.nickName}}</text>
 </view>

@@ -1,6 +1,6 @@
 App({
   onLaunch: function() {
-    console.log("App onLaunch")
+    console.log("App onLaunch");
     //引入 LeanCloud SDK
     const AV = require('/libs/av-weapp-min.js');
     //设置LeanCloud 的 APP_ID 与 APP_KEY

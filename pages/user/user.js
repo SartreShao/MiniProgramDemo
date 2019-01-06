@@ -9,7 +9,14 @@ Page({
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
-
+  /**
+   * 点击事件
+   */
+  clickEvent(event) {
+    wx.navigateTo({
+      url: "../../pages/setting/setting"
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -45,7 +52,7 @@ Page({
   },
 
   // 获取微信用户信息成功回调
-  getUserInfoSuccessCallback:function(e) {
+  getUserInfoSuccessCallback: function(e) {
     console.log(e)
     app.globalData.userInfo = e.detail.userInfo
     this.setData({
