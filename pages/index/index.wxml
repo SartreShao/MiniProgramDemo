@@ -1,4 +1,4 @@
-<view id='container' class='vertical_linearlayout' catchtouchstart='touchStartEvent' catchtouchend='touchEndEvent'>
+<view id='container' class='vertical_linearlayout' bindtouchstart='touchStartEvent' bindtouchend='touchEndEvent'>
   <view class='content_container' wx:if='{{currentTab==="photographer"}}'>
     <photographer/>
   </view>

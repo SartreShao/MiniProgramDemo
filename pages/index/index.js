@@ -49,9 +49,9 @@ Page({
       })
     } else if (this.data.slipDirection === "left") {
       this.setData({
-        currentTab:"model"
+        currentTab: "model"
       })
-   }
+    }
   },
 
   /**
