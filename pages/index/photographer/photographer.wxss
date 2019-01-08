@@ -1,11 +1,16 @@
 /* pages/index/photographer/photographer.wxss */
 
 .container {
+  width: 50%;
+  float: left;
+  box-sizing: border-box;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   margin-top: 26rpx;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .creation_container {
@@ -13,12 +18,14 @@
   flex-direction: column;
   flex-wrap: nowrap;
   width: 324rpx;
+  /* width:50%; */
   height: 396rpx;
   box-shadow: 0 0.8rpx 0 0 rgba(0, 0, 0, 0.16);
   background-color: #fff;
   margin-bottom: 40rpx;
-  margin-left: 20rpx;
-  margin-right: 20rpx;
+  float: left;
+  /* margin-left: 20rpx;
+  margin-right: 20rpx; */
 }
 
 .creation_image {
