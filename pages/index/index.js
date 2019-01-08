@@ -136,7 +136,52 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function() {
-
+    if (this.data.currentTab === "photographer") {
+      wx.showNavigationBarLoading();
+      wx.request({
+        url: 'https://yuepai.leanapp.cn/graphql',
+        data: "{ Creation(containedIn: {publisherRole: [\"photographer\"]}) {objectId likedNumber createdAt creationOfPhoto(limit: 1) { objectId file { objectId url } } user { objectId nickName avatarUrl schoolName } } }",
+        header: {
+          'Content-Type': 'application/graphql'
+        },
+        method: "POST",
+        success: response => {
+          console.log(response.data)
+          let list = response.data.data.Creation
+          list.forEach((item) => {
+            item.createdAt = item.createdAt.substring(0, 10)
+          })
+          this.setData({
+            photographerCreationList: list
+          })
+          wx.hideNavigationBarLoading();
+          wx.stopPullDownRefresh();
+        }
+      })
+    }
+    if (this.data.currentTab === "model") {
+      wx.showNavigationBarLoading();
+      wx.request({
+        url: 'https://yuepai.leanapp.cn/graphql',
+        data: "{ Creation(containedIn: {publisherRole: [\"model\"]}) {objectId likedNumber createdAt creationOfPhoto(limit: 1) { objectId file { objectId url } } user { objectId nickName avatarUrl schoolName } } }",
+        header: {
+          'Content-Type': 'application/graphql'
+        },
+        method: "POST",
+        success: response => {
+          console.log(response.data)
+          let list = response.data.data.Creation
+          list.forEach((item) => {
+            item.createdAt = item.createdAt.substring(0, 10)
+          })
+          this.setData({
+            modelCreationList: list
+          })
+          wx.hideNavigationBarLoading();
+          wx.stopPullDownRefresh();
+        }
+      })
+    }
   },
 
   /**

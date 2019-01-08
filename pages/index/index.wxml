@@ -2,14 +2,14 @@
   <view class='content_container' wx:if='{{currentTab==="photographer"}}'>
     <!--pages/index/photographer/photographer.wxml-->
     <view class='outer_container'>
-      <view class='container' wx:for="{{photographerCreationList}}">
+      <view class='container' wx:for="{{photographerCreationList}}" wx:key="{{objectId}}">
         <template is="creation" data="{{...item}}" />
       </view>
     </view>
   </view>
   <view class='content_container' wx:if='{{currentTab==="model"}}'>
     <view class='outer_container'>
-      <view class='container' wx:for="{{modelCreationList}}">
+      <view class='container' wx:for="{{modelCreationList}}" wx:key="{{objectId}}">
         <template is="creation" data="{{...item}}" />
       </view>
     </view>
