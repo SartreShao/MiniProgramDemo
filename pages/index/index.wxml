@@ -1,9 +1,18 @@
 <view id='container' class='vertical_linearlayout' bindtouchstart='touchStartEvent' bindtouchend='touchEndEvent'>
   <view class='content_container' wx:if='{{currentTab==="photographer"}}'>
-    <photographer/>
+    <!--pages/index/photographer/photographer.wxml-->
+    <view class='outer_container'>
+      <view class='container' wx:for="{{photographerCreationList}}">
+        <template is="creation" data="{{...item}}" />
+      </view>
+    </view>
   </view>
   <view class='content_container' wx:if='{{currentTab==="model"}}'>
-    <model/>
+    <view class='outer_container'>
+      <view class='container' wx:for="{{modelCreationList}}">
+        <template is="creation" data="{{...item}}" />
+      </view>
+    </view>
   </view>
 </view>
 
@@ -11,3 +20,27 @@
   <view class='{{currentTab === "photographer" ? "tab_selected" : "tab_unselected" }}' bindtap='clickTabPhotographer'>摄影师</view>
   <view class='tab-model {{currentTab === "model" ? "tab_selected" : "tab_unselected" }}' bindtap='clickTabModel'>模特</view>
 </view>
+
+<template name="creation">
+  <view class="creation_container">
+    <image class='creation_image' src="{{creationOfPhoto[0].file.url}}">
+    </image>
+    <view class='creation_inner_container'>
+      <view class='horizontal_container1'>
+        <image class='creation_user_avatar' src="{{user.avatarUrl}}" />
+        <view class='vertical_container'>
+          <text class='creation_user_name'>{{user.nickName}}</text>
+          <text class='creation_user_school'>{{user.schoolName}}</text>
+        </view>
+      </view>
+      <view class="rules" />
+      <view class='horizontal_container2'>
+        <view class='horizontal_container3'>
+          <image class="like_image" src='../../res/like.png' />
+          <text class='like_number'>{{likedNumber}}</text>
+        </view>
+        <text class='creation_created_at'>{{createdAt}}</text>
+      </view>
+    </view>
+  </view>
+</template>

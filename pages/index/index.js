@@ -4,7 +4,9 @@ Page({
     currentTab: "photographer",
     startX: 0,
     startY: 0,
-    slipDirection: ""
+    slipDirection: "",
+    photographerCreationList: [],
+    modelCreationList: []
   },
   // 点击事件：TAB - 摄影师
   clickTabPhotographer(event) {
@@ -58,6 +60,47 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+
+    wx.request({
+      url: 'https://yuepai.leanapp.cn/graphql',
+      data: "{ Creation(containedIn: {publisherRole: [\"photographer\"]}) {objectId likedNumber createdAt creationOfPhoto(limit: 1) { objectId file { objectId url } } user { objectId nickName avatarUrl schoolName } } }",
+      header: {
+        'Content-Type': 'application/graphql'
+      },
+      method: "POST",
+      success: response => {
+        console.log(response.data)
+        let list = response.data.data.Creation
+        list.forEach((item) => {
+          item.createdAt = item.createdAt.substring(0, 10)
+        })
+        this.setData({
+          photographerCreationList: list
+        })
+      }
+    })
+
+
+    wx.request({
+      url: 'https://yuepai.leanapp.cn/graphql',
+      data: "{ Creation(containedIn: {publisherRole: [\"model\"]}) {objectId likedNumber createdAt creationOfPhoto(limit: 1) { objectId file { objectId url } } user { objectId nickName avatarUrl schoolName } } }",
+      header: {
+        'Content-Type': 'application/graphql'
+      },
+      method: "POST",
+      success: response => {
+        console.log(response.data)
+        let list = response.data.data.Creation
+        list.forEach((item) => {
+          item.createdAt = item.createdAt.substring(0, 10)
+        })
+        this.setData({
+          modelCreationList: list
+        })
+      }
+    })
+
+
 
   },
 
