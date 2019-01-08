@@ -17,8 +17,7 @@
   justify-content: center;
   margin-left: 20rpx;
   margin-right: 20rpx;
-    margin-bottom: 40rpx;
-
+  margin-bottom: 40rpx;
 }
 
 .creation_container {
