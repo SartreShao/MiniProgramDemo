@@ -23,8 +23,11 @@
 
 <template name="creation">
   <view class="creation_container">
-    <image class='creation_image' src="{{creationOfPhoto[0].file.url}}">
-    </image>
+    <view class="creation_image_container">
+      <image class='creation_image' src="{{creationOfPhoto[0].file.url}}" />
+      <image class='group_photo_image' src="../../res/group_photo.png" hidden='{{false}}' />
+    </view>
+
     <view class='creation_inner_container'>
       <view class='horizontal_container1'>
         <image class='creation_user_avatar' src="{{user.avatarUrl}}" />
