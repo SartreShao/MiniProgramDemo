@@ -23,6 +23,8 @@
   </view>
 </template>
 
-<view class='container' wx:for="{{creationList}}">
-  <template is="creation" data="{{...item}}"/>
+<view class='outer_container'>
+  <view class='container' wx:for="{{creationList}}">
+    <template is="creation" data="{{...item}}" />
+  </view>
 </view>
