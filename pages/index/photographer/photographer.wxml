@@ -1,29 +1,28 @@
 <!--pages/index/photographer/photographer.wxml-->
 <template name="creation">
   <view class="creation_container">
-    <image class='creation_image'>
+    <image class='creation_image' src="{{creationOfPhoto[0].file.url}}">
     </image>
     <view class='creation_inner_container'>
       <view class='horizontal_container1'>
-        <image class='creation_user_avatar' />
+        <image class='creation_user_avatar' src="{{user.avatarUrl}}" />
         <view class='vertical_container'>
-          <text class='creation_user_name'>邵励治</text>
-          <text class='creation_user_school'>北京工业大学</text>
+          <text class='creation_user_name'>{{user.nickName}}</text>
+          <text class='creation_user_school'>{{user.schoolName}}</text>
         </view>
       </view>
       <view class="rules" />
       <view class='horizontal_container2'>
         <view class='horizontal_container3'>
           <image class="like_image" src='../../../res/like.png' />
-          <text class='like_number'>8</text>
+          <text class='like_number'>{{likedNumber}}</text>
         </view>
-        <text class='creation_created_at'>3分钟</text>
+        <text class='creation_created_at'>{{createdAt}}</text>
       </view>
     </view>
   </view>
 </template>
 
-<view class='container'>
-  <template is="creation" />
-  <text>{{creationList}}</text>
+<view class='container' wx:for="{{creationList}}">
+  <template is="creation" data="{{...item}}"/>
 </view>

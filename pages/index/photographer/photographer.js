@@ -11,8 +11,12 @@ Component({
         method: "POST",
         success: response => {
           console.log(response.data)
+          let list = response.data.data.Creation
+          list.forEach((item) => {
+            item.createdAt = item.createdAt.substring(0,10)
+          })
           this.setData({
-            creationList: JSON.stringify(response.data.data.Creation)
+            creationList: list
           })
         }
       })
