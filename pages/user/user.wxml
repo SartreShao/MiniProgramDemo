@@ -25,7 +25,7 @@
       <text class='like'>赞同</text>
       <text class='like_number'>257</text>
     </view>
-    <view class='nothing_tip_container'>
+    <view class='nothing_tip_container' hidden='{{hasRoleAndSchool}}'>
       <text class='nothing_tip'>这里什么都没有</text>
     </view>
     <view class='creation_tab_container'>
