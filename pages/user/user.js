@@ -41,6 +41,36 @@ Page({
         }
       })
     }
+    const AV = require('../../libs/av-weapp-min.js');
+
+    //获取 LeanCloud 中的数据
+    //LeanCloud 中用户名为空？
+    if (AV.User.current().toJSON().nickName == "") {
+      console.log("LeanCloud's nickName is null, put wechat's nickName in it")
+      const currentUser = AV.User.current()
+      currentUser.set("nickName", app.globalData.userInfo.nickName)
+      currentUser.save()
+      app.globalData.leanCloudUser = currentUser.toJSON()
+    }
+    //LeanCloud 中头像为空？
+    if (AV.User.current().toJSON().avatarUrl == "") {
+      console.log("LeanCloud's avatar is null, put wechat's avatar in it")
+      const currentUser = AV.User.current()
+      currentUser.set("avatarUrl", app.globalData.userInfo.avatarUrl)
+      currentUser.save()
+      app.globalData.leanCloudUser = currentUser.toJSON()
+    }
+    if (AV.User.current().toJSON().sex == "") {
+      console.log("LeanCloud's sex is null, put wechat's avatar in it")
+      const currentUser = AV.User.current()
+      if (app.globalData.userInfo.gender == 1) {
+        currentUser.set("sex", "男")
+        currentUser.save()
+      } else {
+        currentUser.set("sex", "女")
+        currentUser.save()
+      }
+    }
   },
 
   // 获取微信用户信息成功回调
