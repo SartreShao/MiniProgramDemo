@@ -182,3 +182,24 @@ page {
   letter-spacing: 0.4px;
   color: #888;
 }
+
+.creation_tab_container {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  margin-top: 390rpx;
+  justify-content: center;
+}
+
+.creation_tab_title {
+  font-size: 34rpx;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #000;
+  line-height: 1.12;
+  padding-bottom: 16rpx;
+  border-bottom: 6rpx solid #000;
+}
