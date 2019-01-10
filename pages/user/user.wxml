@@ -28,6 +28,9 @@
     <view class='nothing_tip_container' hidden='{{hasRoleAndSchool}}'>
       <text class='nothing_tip'>这里什么都没有</text>
     </view>
+    <view class='school_name_container' hidden='{{!hasRoleAndSchool}}'>
+      <text class='school_name_text'>{{schoolName}}</text>
+    </view>
     <view class='creation_tab_container'>
       <text class='creation_tab_title'>作品</text>
     </view>

@@ -234,3 +234,23 @@ page {
   margin-left: 8.4rpx;
   margin-top: 5rpx;
 }
+
+.school_name_container {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  margin-top: 276rpx;
+  justify-content: center;
+}
+
+.school_name_text {
+  font-size: 26rpx;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.92;
+  letter-spacing: 2.6rpx;
+  text-align: center;
+  color: #5a5a5a;
+}
+
