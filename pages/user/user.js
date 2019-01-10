@@ -10,14 +10,6 @@ Page({
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
   /**
-   * 点击事件
-   */
-  clickEvent(event) {
-    wx.navigateTo({
-      url: "../../pages/setting/setting"
-    })
-  },
-  /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {

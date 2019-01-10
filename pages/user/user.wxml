@@ -1,11 +1,35 @@
-<view wx:if="{{!hasUserInfo && canIUse}}" class="vertical_view_container">
+<view wx:if="{{!hasUserInfo && canIUse}}" class="vertical_view_container1">
   <image class='logo_image_item' src='../../res/icon.png' mode='aspectFit' />
   <text class="appname_text_item">YUEPAI</text>
   <button class="login_button_item" open-type='getUserInfo' bindgetuserinfo='getUserInfoSuccessCallback'>
     <text>立即登录</text>
   </button>
 </view>
-<view wx:else bindtap='clickEvent'>
-  <image src='{{userInfo.avatarUrl}}' mode='cover' />
-  <text>{{userInfo.nickName}}</text>
+<view class="vertical_view_container2" wx:else>
+  <view class="relative_container">
+    <image src="http://lc-cl6vhv0u.cn-n1.lcfile.com/bca8b62e9df849a4dd5f.png" class='background_image' mode='cover' />
+    <view class='user_info_bar' />
+    <view class='avatar_background' />
+    <image src='{{userInfo.avatarUrl}}' mode='cover' class='avater_image' />
+    <view class='nickname_container'>
+      <block wx:if="{{userInfo.gender==1}}">
+        <image class="gender_image" src='../../res/sex_boy.png' />
+      </block>
+      <block wx:else>
+        <image class="gender_image" src='../../res/sex_girl.png' />
+      </block>
+      <text class='nickname_text'>{{userInfo.nickName}}</text>
+    </view>
+    <view class='separation_user_info' />
+    <view class='like_number_contaner'>
+      <text class='like'>赞同</text>
+      <text class='like_number'>257</text>
+    </view>
+    <view class='nothing_tip_container'>
+      <text class='nothing_tip'>这里什么都没有</text>
+    </view>
+  </view>
+  <view class='user_creation_list_container'>
+  </view>
+
 </view>

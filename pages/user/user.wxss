@@ -4,7 +4,7 @@ page {
   background-color: #f3f3f3;
 }
 
-.vertical_view_container {
+.vertical_view_container1 {
   margin-top: 152px;
   display: flex;
   flex-wrap: nowrap;
@@ -39,4 +39,146 @@ page {
 .login_button_item text {
   font-size: 31.25rpx;
   font-weight: lighter;
+}
+
+/* User页面 */
+
+.background_image {
+  position: absolute;
+  height: 260rpx;
+  width: 100%;
+}
+
+.vertical_view_container2 {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+
+.relative_container {
+  position: relative;
+  height: 446rpx;
+  widows: 100%;
+  background: #fff;
+}
+
+.user_info_bar {
+  width: 709rpx;
+  height: 214rpx;
+  border-radius: 8rpx;
+  box-shadow: 0 0.2rpx 12rpx 0 rgba(52, 52, 52, 0.1);
+  background-color: #fff;
+  margin-top: 154rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  position: absolute;
+}
+
+.avatar_background {
+  position: absolute;
+  height: 164rpx;
+  width: 164rpx;
+  border-radius: 82rpx;
+  margin-top: 72rpx;
+  margin-left: 293rpx;
+  margin-right: 293rpx;
+  background: #fff;
+}
+
+.user_creation_list_container {
+}
+
+.avater_image {
+  position: absolute;
+  width: 152rpx;
+  height: 152rpx;
+  border-radius: 76rpx;
+  margin-left: 299rpx;
+  margin-right: 299rpx;
+  margin-top: 78rpx;
+}
+
+.nickname_container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 240rpx;
+  margin-right: 387.4rpx;
+  right: 0;
+  position: absolute;
+}
+
+.nickname_text {
+  font-size: 26rpx;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: normal;
+  color: #3c3c3c;
+  margin-left: 7.4rpx;
+}
+
+.gender_image {
+  height: 22.7rpx;
+  width: 23.42rpx;
+}
+
+.separation_user_info {
+  position: absolute;
+  width: 0.6rpx;
+  height: 36rpx;
+  background-color: #b2b2b2;
+  margin-top: 241rpx;
+  margin-right: 375rpx;
+  margin-left: 375rpx;
+}
+
+.like_number_contaner {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 240rpx;
+  margin-left: 387.4rpx;
+  left: 0;
+  position: absolute;
+}
+
+.like {
+  font-size: 26rpx;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: normal;
+  color: #3c3c3c;
+  margin-right: 12rpx;
+}
+
+.like_number {
+  font-size: 24rpx;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: normal;
+  color: #3c3c3c;
+}
+
+.nothing_tip_container {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  margin-top: 294rpx;
+  justify-content: center;
+}
+
+.nothing_tip {
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: 0.4px;
+  color: #888;
 }
