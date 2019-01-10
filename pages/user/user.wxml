@@ -35,8 +35,8 @@
   <view class='user_creation_list_container'>
   </view>
 
-</view>
-<view class='perfect_personal_info_container'>
-  <text class='perfect_personal_info_text'>请完善个人信息</text>
-  <image class='perfect_personal_info_image' src='../../res/enter.png' />
+  <view class='perfect_personal_info_container'>
+    <text class='perfect_personal_info_text'>请完善个人信息</text>
+    <image class='perfect_personal_info_image' src='../../res/enter.png' />
+  </view>
 </view>
