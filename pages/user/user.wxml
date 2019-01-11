@@ -31,6 +31,11 @@
     <view class='school_name_container' hidden='{{!hasRoleAndSchool}}'>
       <text class='school_name_text'>{{schoolName}}</text>
     </view>
+    <view class='role_container' hidden='{{!hasRoleAndSchool}}'>
+      <view class='role_background'>
+        <text class='role_text'>摄影师</text>
+      </view>
+    </view>
     <view class='creation_tab_container'>
       <text class='creation_tab_title'>作品</text>
     </view>

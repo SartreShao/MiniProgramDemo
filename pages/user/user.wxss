@@ -254,3 +254,32 @@ page {
   color: #5a5a5a;
 }
 
+.role_container {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  margin-top: 324rpx;
+  justify-content: center;
+}
+
+.role_background {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 108rpx;
+  height: 40rpx;
+  border-radius: 28rpx;
+  background-color: #000;
+}
+
+.role_text {
+  font-size: 26rpx;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.46;
+  letter-spacing: normal;
+  text-align: center;
+  color: #ffffff;
+}
+
