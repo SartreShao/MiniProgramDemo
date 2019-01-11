@@ -263,6 +263,8 @@ page {
 }
 
 .role_background {
+  margin-left: 16rpx;
+  margin-right: 16rpx;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -280,6 +282,5 @@ page {
   line-height: 1.46;
   letter-spacing: normal;
   text-align: center;
-  color: #ffffff;
+  color: #fff;
 }
-

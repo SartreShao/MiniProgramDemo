@@ -32,9 +32,11 @@
       <text class='school_name_text'>{{schoolName}}</text>
     </view>
     <view class='role_container' hidden='{{!hasRoleAndSchool}}'>
+      <block wx:for="{{roleList}}">
       <view class='role_background'>
-        <text class='role_text'>摄影师</text>
+        <text class='role_text'>{{item}}</text>
       </view>
+      </block>
     </view>
     <view class='creation_tab_container'>
       <text class='creation_tab_title'>作品</text>
