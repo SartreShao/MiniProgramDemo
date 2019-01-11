@@ -86,7 +86,7 @@ page {
 }
 
 .user_creation_list_container {
-  margin-top: 18rpx;
+  margin-top: 26rpx;
   margin-left: 32rpx;
   margin-right: 32rpx;
   display: flex;
@@ -293,7 +293,6 @@ page {
 }
 
 .user_creation_container {
-  
   margin-bottom: 24rpx;
   display: flex;
   flex-direction: column;
