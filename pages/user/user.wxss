@@ -284,3 +284,60 @@ page {
   text-align: center;
   color: #fff;
 }
+
+.user_creation_container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  width: 324rpx;
+  height: 314rpx;
+  box-shadow: 0 0 0.8rpx 0 rgba(0, 0, 0, 0.16);
+  background-color: #fff;
+}
+
+.user_creation_image {
+  background-color: #123456;
+  width: 324rpx;
+  height: 260rpx;
+}
+
+.user_creation_info_container {
+  position: relative;
+}
+
+.user_creation_like_icon {
+  margin-top: 18rpx;
+  margin-left: 11rpx;
+  position: absolute;
+  width: 26rpx;
+  height: 24.6rpx;
+}
+
+.user_creation_like_number {
+  position: absolute;
+  margin-top: 11rpx;
+  margin-left: 52rpx;
+  font-size: 24rpx;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.58;
+  letter-spacing: normal;
+  text-align: center;
+  color: #b2b2b2;
+}
+
+.user_creation_createdat {
+  position: absolute;
+  right: 0;
+  margin-top: 13rpx;
+  margin-right: 10rpx;
+  font-size: 20rpx;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.9;
+  letter-spacing: normal;
+  text-align: center;
+  color: #b2b2b2;
+}

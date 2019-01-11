@@ -32,10 +32,10 @@
       <text class='school_name_text'>{{schoolName}}</text>
     </view>
     <view class='role_container' hidden='{{!hasRoleAndSchool}}'>
-      <block wx:for="{{roleList}}">
-      <view class='role_background'>
-        <text class='role_text'>{{item}}</text>
-      </view>
+      <block wx:for="{{roleList}}" wx:key="{{item}}">
+        <view class='role_background'>
+          <text class='role_text'>{{item}}</text>
+        </view>
       </block>
     </view>
     <view class='creation_tab_container'>
@@ -43,6 +43,9 @@
     </view>
   </view>
   <view class='user_creation_list_container'>
+    <block wx:for="{{userCreationList}}">
+      <template is="user_creation" data="{{...item}}" />
+    </block>
   </view>
 
   <view class='perfect_personal_info_container' hidden='{{hasRoleAndSchool}}'>
@@ -50,3 +53,14 @@
     <image class='perfect_personal_info_image' src='../../res/enter.png' />
   </view>
 </view>
+
+<template name="user_creation">
+  <view class='user_creation_container'>
+    <image class='user_creation_image' src='{{creationOfPhoto[0].file.url}}' />
+    <view class='user_creation_info_container'>
+      <image class='user_creation_like_icon' src='../../res/like.png' />
+      <text class='user_creation_like_number'>0</text>
+      <text class='user_creation_createdat'>2019-12-12</text>
+    </view>
+  </view>
+</template>

@@ -100,7 +100,7 @@ function getHasRoleAndSchool() {
         })
       } else {
         //二者皆不为空
-        const role = []
+        const role = [];
         response.data.data._User[0].usersOf_Role.forEach(function(element, index, array) {
           if (element.name === "photographer") {
             role.push("摄影师")
@@ -108,10 +108,10 @@ function getHasRoleAndSchool() {
           if (element.name === "model") {
             role.push("模特")
           }
-        })
+        });
         this.setData({
           roleList: role
-        })
+        });
         this.setData({
           hasRoleAndSchool: true,
           schoolName: response.data.data._User[0].schoolName
@@ -119,7 +119,7 @@ function getHasRoleAndSchool() {
       }
       this.setData({
         likedNumber: response.data.data._User[0].likedNumber
-      })
+      });
       console.log("hasRoleAndSchool: " + this.data.hasRoleAndSchool)
     }
   });
@@ -133,6 +133,7 @@ Page({
     schoolName: "",
     roleList: [],
     likedNumber: 0,
+    userCreationList: [],
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
   /**
@@ -169,6 +170,43 @@ Page({
     //获取 LeanCloud 中的数据
     saveUserInfoToLeanCloud();
 
+    /*
+        四：获取 该用户的 CreationList
+     */
+    wx.request({
+      url: 'https://yuepai.leanapp.cn/graphql',
+      data: "{\n" +
+        "  _User(objectId:\"" + AV.User.current().toJSON().objectId + "\") {\n" +
+        "    objectId\n" +
+        "    userOfCreation {\n" +
+        "      objectId\n" +
+        "      likedNumber\n" +
+        "      createdAt\n" +
+        "      creationOfPhoto(limit: 2) {\n" +
+        "        objectId\n" +
+        "        file {\n" +
+        "          objectId\n" +
+        "          url\n" +
+        "        }\n" +
+        "      }\n" +
+        "    }\n" +
+        "  }\n" +
+        "}\n",
+      header: {
+        'Content-Type': 'application/graphql'
+      },
+      method: "POST",
+      success: response => {
+        let list = response.data.data._User[0].userOfCreation
+        list.forEach((item) => {
+          item.createdAt = item.createdAt.substring(0, 10)
+        })
+        this.setData({
+          userCreationList: list
+        })
+        console.log(this.data.userCreationList)
+      }
+    });
   },
 
   // 获取微信用户信息成功回调
