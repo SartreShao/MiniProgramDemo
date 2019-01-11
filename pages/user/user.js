@@ -100,6 +100,18 @@ function getHasRoleAndSchool() {
         })
       } else {
         //二者皆不为空
+        const role = []
+        response.data.data._User[0].usersOf_Role.forEach(function(element, index, array) {
+          if (element.name === "photographer") {
+            role.push("摄影师")
+          }
+          if (element.name === "model") {
+            role.push("模特")
+          }
+        })
+        this.setData({
+          roleList: role
+        })
         this.setData({
           hasRoleAndSchool: true,
           schoolName: response.data.data._User[0].schoolName
@@ -119,6 +131,7 @@ Page({
     hasUserInfo: false,
     hasRoleAndSchool: true,
     schoolName: "",
+    roleList: [],
     likedNumber: 0,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
