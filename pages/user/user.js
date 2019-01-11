@@ -72,6 +72,7 @@ function getHasRoleAndSchool() {
     data: "{\n" +
       "  _User(objectId:\"" + AV.User.current().toJSON().objectId + "\") {\n" +
       "    objectId\n" +
+      "    likedNumber\n" +
       "    nickName\n" +
       "    schoolName\n" +
       "    usersOf_Role {\n" +
@@ -104,6 +105,9 @@ function getHasRoleAndSchool() {
           schoolName: response.data.data._User[0].schoolName
         })
       }
+      this.setData({
+        likedNumber: response.data.data._User[0].likedNumber
+      })
       console.log("hasRoleAndSchool: " + this.data.hasRoleAndSchool)
     }
   });
@@ -113,8 +117,9 @@ Page({
   data: {
     userInfo: {},
     hasUserInfo: false,
-    hasRoleAndSchool: false,
+    hasRoleAndSchool: true,
     schoolName: "",
+    likedNumber: 0,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
   /**

@@ -23,7 +23,7 @@
     <view class='separation_user_info' />
     <view class='like_number_contaner'>
       <text class='like'>赞同</text>
-      <text class='like_number'>257</text>
+      <text class='like_number'>{{likedNumber}}</text>
     </view>
     <view class='nothing_tip_container' hidden='{{hasRoleAndSchool}}'>
       <text class='nothing_tip'>这里什么都没有</text>
