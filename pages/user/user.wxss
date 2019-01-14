@@ -142,6 +142,15 @@ page {
   margin-left: 375rpx;
 }
 
+.setting_image {
+  position: absolute;
+  width: 40rpx;
+  height: 40rpx;
+  right: 0;
+  margin-right: 32rpx;
+  margin-top: 168rpx;
+}
+
 .like_number_contaner {
   display: flex;
   flex-direction: row;
