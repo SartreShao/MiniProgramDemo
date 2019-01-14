@@ -25,7 +25,7 @@
       <text class='like'>赞同</text>
       <text class='like_number'>{{likedNumber}}</text>
     </view>
-    <image class='setting_image' src='../../res/setting.png' />
+    <image class='setting_image' bindtap="clickSettingIcon" src='../../res/setting.png' />
     <view class='nothing_tip_container' hidden='{{hasRoleAndSchool}}'>
       <text class='nothing_tip'>这里什么都没有</text>
     </view>
@@ -49,7 +49,7 @@
     </block>
   </view>
 
-  <view class='perfect_personal_info_container' hidden='{{hasRoleAndSchool}}'>
+  <view class='perfect_personal_info_container' bindtap='clickSettingIcon' hidden='{{hasRoleAndSchool}}'>
     <text class='perfect_personal_info_text'>请完善个人信息</text>
     <image class='perfect_personal_info_image' src='../../res/enter.png' />
   </view>

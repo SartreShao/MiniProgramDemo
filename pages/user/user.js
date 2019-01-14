@@ -136,6 +136,12 @@ Page({
     userCreationList: [],
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
+  // 点击「设置」按钮
+  clickSettingIcon: function(event) {
+    wx.navigateTo({
+      url:"../setting/setting"
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
